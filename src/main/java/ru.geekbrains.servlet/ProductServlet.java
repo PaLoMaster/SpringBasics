@@ -2,9 +2,8 @@ package ru.geekbrains.servlet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.geekbrains.model.Product;
+import ru.geekbrains.model.entity.Product;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +16,7 @@ import java.util.List;
 @WebServlet(name = "ProductServlet", urlPatterns = "/prod_servlet")
 public class ProductServlet extends HttpServlet {
 
-    private static Logger logger = LoggerFactory.getLogger(ProductServlet.class);
+    private final static Logger logger = LoggerFactory.getLogger(ProductServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
