@@ -1,4 +1,4 @@
-package ru.geekbrains.model;
+package ru.geekbrains.model.entity;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -35,14 +35,14 @@ public class Cart {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append("Корзина № ").append(id + 1).append(" с продуктами");
+        result.append("Корзина № ").append(id).append(" с продуктами");
         if (products.isEmpty()) {
             result.append(" пуста.");
         } else {
-            result.append(":\n");
-            products.forEach(prod -> result.append(prod.getTitle()).append(", "));
-            int lastComma = result.lastIndexOf(", ");
-            result.delete(lastComma, lastComma + 2);
+            result.append(":\n\t");
+            products.forEach(prod -> result.append(prod.toString()).append("\n\t"));
+            int lastEnterAndTab = result.lastIndexOf("\n\t");
+            result.delete(lastEnterAndTab, lastEnterAndTab + 2);
         }
         return result.toString();
     }

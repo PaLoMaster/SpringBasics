@@ -1,4 +1,4 @@
-package ru.geekbrains.model;
+package ru.geekbrains.model.entity;
 
 public class Product {
     private int id;
@@ -25,10 +25,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", cost=" + cost +
-                '}';
+        return id + ". '" + title + "' стоимостью " + cost;
     }
 }
